@@ -1,0 +1,77 @@
+{
+  "name": "vscode-angular2-component-generator",
+  "displayName": "Angular2 Component Generator",
+  "description": "Generates angular2 component files (html, css, typescript -> template, stylesheet, component.ts + module.ts)",
+  "version": "0.0.1",
+  "publisher": "dbaikov",
+  "author": {
+    "name": "Dmytro Baikov",
+    "email": "dmitriybaikov@gmail.com"
+  },
+  "homepage": "https://github.com/dbaikov/vscode-angular2-component-generator",
+  "galleryBanner": {
+      "color": "#0273D4",
+      "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbaikov/vscode-angular2-component-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dbaikov/vscode-angular2-component-generator/issues",
+    "email": "dmitriybaikov@gmail.com"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "vscode-angular2",
+    "angular2",
+    "angular2 component",
+    "angular2 generate component",
+    "typescript"
+  ],
+  "activationEvents": [
+    "onCommand:extension.genAngular2ComponentFiles"
+  ],
+  "main": "./out/src/extension",
+  "icon": "assets/images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.genAngular2ComponentFiles",
+        "title": "New Angular2 Component"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.genAngular2ComponentFiles",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {
+    "change-case": "^3.0.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^0.30.0",
+    "rxjs": "^5.0.0-rc.1"
+  }
+}
