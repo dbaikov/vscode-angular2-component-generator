@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
         let userConfig: Config = <Config>_workspace.getConfiguration((configPrefix + '.config'));
         let config: Config;
 
-        if (userConfig.global || userConfig.files) {
+        if (userConfig) {
             config = _.assign(config, defaultConfig, userConfig) as Config;
         }
 
