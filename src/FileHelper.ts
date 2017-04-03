@@ -114,7 +114,7 @@ export class FileHelper {
         return componentDir;
     }
 
-    public static getConfig(): any {
+    public static getDefaultConfig(): any {
         let content = fs.readFileSync( this.assetRootDir + '/config/config.json' ).toString();
         content = content.replace(/\${workspaceRoot}/g, vscode.workspace.rootPath);
         return JSON.parse(content);

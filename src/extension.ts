@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 import { FileHelper } from './FileHelper';
 import { Config } from './config.interface';
 
+import * as _ from "lodash";
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -20,10 +22,12 @@ export function activate(context: vscode.ExtensionContext) {
 
         let configPrefix: String = 'ng2ComponentGenerator';
         let _workspace = vscode.workspace;
-        let config = <Config>_workspace.getConfiguration((configPrefix + '.config'));
+        let defaultConfig: Config = FileHelper.getDefaultConfig();
+        let userConfig: Config = <Config>_workspace.getConfiguration((configPrefix + '.config'));
+        let config: Config;
 
-        if (!config.files) {
-            config = FileHelper.getConfig();
+        if (userConfig.global || userConfig.files) {
+            config = _.assign(config, defaultConfig, userConfig) as Config;
         }
 
         // Display a dialog to the user

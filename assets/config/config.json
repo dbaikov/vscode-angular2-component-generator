@@ -1,4 +1,7 @@
 {
+    "global": {
+        "quotes": "single"
+    },
     "files": {
         "component": {
             "create": true,
