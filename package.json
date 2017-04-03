@@ -41,6 +41,16 @@
   "main": "./out/src/extension",
   "icon": "assets/images/icon.png",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "ng2ComponentGenerator",
+      "properties": {
+        "ng2ComponentGenerator.config": {
+          "type": "object",
+          "description": "vscode-angular2-component-generator configuration object. See: https://github.com/dbaikov/vscode-angular2-component-generator/blob/master/README.md for more information."
+        }
+      }
+    },
     "commands": [
       {
         "command": "extension.genAngular2ComponentFiles",
