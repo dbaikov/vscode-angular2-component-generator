@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from {quotes}@angular/core{quotes};
 
 @Component({
     moduleId: module.id,
-    selector: '{selector}',
-    templateUrl: '{templateUrl}',
-    styleUrls: ['{styleUrls}']
+    selector: {quotes}{selector}{quotes},
+    templateUrl: {quotes}{templateUrl}{quotes},
+    styleUrls: [{quotes}{styleUrls}{quotes}]
 })
 export class {className}Component {
 

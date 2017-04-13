@@ -28,6 +28,9 @@ Use the "template" key to override default templates for the extension
 
 ```json
 {
+    "global": {
+        "quotes": "single" // or "double"
+    },
     "files": {
         "component": {
             "create": true,

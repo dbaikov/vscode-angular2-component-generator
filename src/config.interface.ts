@@ -1,26 +1,8 @@
+import { FileConfig } from './config/files.interface';
+import { GlobalConfig } from './config/global.interface';
 import { WorkspaceConfiguration } from 'vscode';
 
 export interface Config extends WorkspaceConfiguration {
-    files: {
-        component: {
-            create: boolean,
-            extension: string,
-            template?: string
-        },
-        css: {
-            create: boolean,
-            extension: string,
-            template?: string
-        },
-        html: {
-            create: boolean,
-            extension: string,
-            template?: string
-        },
-        module: {
-            create: boolean,
-            extension: string,
-            template?: string
-        }
-    };
+    global: GlobalConfig,
+    files: FileConfig
 };
