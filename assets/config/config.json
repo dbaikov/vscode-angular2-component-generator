@@ -1,6 +1,7 @@
 {
     "global": {
-        "quotes": "single"
+        "quotes": "single",
+        "generateFolder": true
     },
     "files": {
         "component": {

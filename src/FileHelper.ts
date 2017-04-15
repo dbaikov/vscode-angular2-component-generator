@@ -20,7 +20,7 @@ export class FileHelper {
         if (config.template) {
             templateFileName = this.resolveWorkspaceRoot(config.template);
         }
-        
+
         let componentContent = fs.readFileSync( templateFileName ).toString()
             .replace(/{selector}/g, componentName)
             .replace(/{templateUrl}/g, `${componentName}.component.html`)
@@ -69,7 +69,7 @@ export class FileHelper {
 
         let htmlContent = fs.readFileSync( templateFileName ).toString();
 
-        let filename = `${componentDir}/${componentName}.component.${config.extension}`; 
+        let filename = `${componentDir}/${componentName}.component.${config.extension}`;
         if (config.create) {
             return this.createFile(filename, htmlContent)
                 .map(result => filename);
@@ -88,7 +88,7 @@ export class FileHelper {
         let cssContent = fs.readFileSync( templateFileName ).toString();
 
 
-        let filename = `${componentDir}/${componentName}.component.${config.extension}`; 
+        let filename = `${componentDir}/${componentName}.component.${config.extension}`;
         if (config.create) {
             return this.createFile(filename, cssContent)
                 .map(result => filename);
@@ -98,7 +98,7 @@ export class FileHelper {
         }
     };
 
-    public static createComponentDir(uri: any, componentName: string): string {
+    public static createComponentDir(uri: any, componentName: string, globalConfig: GlobalConfig): string {
         let contextMenuSourcePath;
 
         if (uri && fs.lstatSync(uri.fsPath).isDirectory()) {
@@ -109,8 +109,12 @@ export class FileHelper {
             contextMenuSourcePath = vscode.workspace.rootPath;
         }
 
-        let componentDir = `${contextMenuSourcePath}/${componentName}`;
-        fse.mkdirsSync(componentDir);
+        let componentDir = `${contextMenuSourcePath}`;
+        if(globalConfig.generateFolder) {
+            componentDir = `${contextMenuSourcePath}/${componentName}`;
+            fse.mkdirsSync(componentDir);
+        }
+
         return componentDir;
     }
 

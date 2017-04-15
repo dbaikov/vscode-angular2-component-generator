@@ -43,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
                         throw new Error('Component name can not be empty!');
                     }
                     let componentName = changeCase.paramCase(val);
-                    let componentDir = FileHelper.createComponentDir(uri, componentName);
+                    let componentDir = FileHelper.createComponentDir(uri, componentName, config.global);
 
                     return Observable.forkJoin(
                         FileHelper.createComponent(componentDir, componentName, config.global, config.files.component),

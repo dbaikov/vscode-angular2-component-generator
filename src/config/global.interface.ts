@@ -1,3 +1,4 @@
 export interface GlobalConfig {
-    quotes?: string
+    quotes?: string,
+    generateFolder?: boolean
 }
