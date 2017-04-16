@@ -67,6 +67,13 @@ Use the "template" key to override default templates for the extension
 ### How can I generate a component in the flat configuration (in same folder as parent)?
 In the global configuration part set the `generateFolder` key to `false`.
 
+### Changelog
+#### 0.0.2 (2017-04-15)
+- Allow a global configuration object to be defined
+- Added quotes property: singleor double in other words ( ' or " )
+- Merged defaultconfiguration (assets folder) with userdefined configuration
+therefore the whole configuration object doesn't need to be copied for a single config change
+- Added `generateFolder` property to global config to `enable` / `disable` generation of the component in the separate folder
 
 ## Bugs
 
