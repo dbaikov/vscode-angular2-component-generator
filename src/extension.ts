@@ -46,7 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
                     let componentDir = FileHelper.createComponentDir(uri, componentName, config.global);
 
                     return Observable.forkJoin(
-                        FileHelper.createComponent(componentDir, componentName, config.global, config.files.component),
+                        FileHelper.createComponent(componentDir, componentName, config.global, config.files),
                         FileHelper.createHtml(componentDir, componentName, config.files.html),
                         FileHelper.createCss(componentDir, componentName, config.files.css),
                         FileHelper.createModule(componentDir, componentName, config.global, config.files.module)

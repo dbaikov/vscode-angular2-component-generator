@@ -1,7 +1,7 @@
 import { HTMLConfig } from './config/types/html-config.interface';
 import { CSSConfig } from './config/types/css-config.interface';
 import { ModuleConfig } from './config/types/module-config.interface';
-import { ComponentConfig } from './config/types/component-config.interface';
+import { FileConfig } from './config/files.interface';
 import { GlobalConfig } from './config/global.interface';
 import { Config } from './config.interface';
 import * as vscode from 'vscode';
@@ -15,22 +15,22 @@ export class FileHelper {
     private static createFile = <(file: string, data: string) => Observable<{}>>Observable.bindNodeCallback(fse.outputFile);
     private static assetRootDir: string = path.join(__dirname, '../../assets');
 
-    public static createComponent(componentDir: string, componentName: string, globalConfig: GlobalConfig, config: ComponentConfig): Observable<string> {
+    public static createComponent(componentDir: string, componentName: string, globalConfig: GlobalConfig, config: FileConfig): Observable<string> {
         let templateFileName = this.assetRootDir + '/templates/component.template';
-        if (config.template) {
-            templateFileName = this.resolveWorkspaceRoot(config.template);
+        if (config.component.template) {
+            templateFileName = this.resolveWorkspaceRoot(config.component.template);
         }
 
         let componentContent = fs.readFileSync( templateFileName ).toString()
             .replace(/{selector}/g, componentName)
             .replace(/{templateUrl}/g, `${componentName}.component.html`)
-            .replace(/{styleUrls}/g, `${componentName}.component.css`)
+            .replace(/{styleUrls}/g, `${componentName}.component.${config.css.extension}`)
             .replace(/{className}/g, changeCase.pascalCase(componentName))
             .replace(/{quotes}/g, this.getQuotes(globalConfig));
 
-        let filename = `${componentDir}/${componentName}.component.${config.extension}`;
+        let filename = `${componentDir}/${componentName}.component.${config.component.extension}`;
 
-        if (config.create) {
+        if (config.component.create) {
             return this.createFile(filename, componentContent)
                 .map(result => filename);
         }
