@@ -68,6 +68,8 @@ Use the "template" key to override default templates for the extension
 In the global configuration part set the `generateFolder` key to `false`.
 
 ### Changelog
+#### 0.0.3 (2017-05-21)
+- Fixes `styleUrl` extension (css/scss) when generating component with `scss` (issue #5)
 #### 0.0.2 (2017-04-15)
 - Allow a global configuration object to be defined
 - Added quotes property: singleor double in other words ( ' or " )

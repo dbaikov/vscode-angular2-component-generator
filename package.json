@@ -2,7 +2,7 @@
   "name": "vscode-angular2-component-generator",
   "displayName": "Angular2 Component Generator",
   "description": "Generates angular2 component files (html, css, typescript -> template, stylesheet, component.ts + module.ts)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "dbaikov",
   "author": {
     "name": "Dmytro Baikov",
