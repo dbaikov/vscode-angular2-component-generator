@@ -69,7 +69,7 @@ export function activate(context: vscode.ExtensionContext) {
                 };
             })
             .subscribe(
-                () => vscode.window.setStatusBarMessage('Component Successfuly created!'),
+                () => vscode.window.setStatusBarMessage('Component Successfuly created!', 5000),
                 err => vscode.window.showErrorMessage(err.message)
             );
 
