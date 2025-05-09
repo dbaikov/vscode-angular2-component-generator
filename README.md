@@ -1,6 +1,8 @@
 # Angular2 Component Generation Extension for VS CODE
-[![Version](http://vsmarketplacebadge.apphb.com/version/dbaikov.vscode-angular2-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=dbaikov.vscode-angular2-component-generator)
-[![Installs](http://vsmarketplacebadge.apphb.com/installs/dbaikov.vscode-angular2-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=dbaikov.vscode-angular2-component-generator)
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/dbaikov.vscode-angular2-component-generator)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/dbaikov.vscode-angular2-component-generator)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/dbaikov.vscode-angular2-component-generator)
+
 (**vscode-angular2-component-generator**)
 
 ## Description
